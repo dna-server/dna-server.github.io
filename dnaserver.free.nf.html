@@ -1,0 +1,569 @@
+<html lang="en" id="hypertext"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRASH MAGIC NODE BUILDER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lime;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 10vh;
+        }
+	a {
+	    text-decoration: underline; /* Add an underline to the link text */
+	    color: blue; /* Set the color to blue */
+	}
+        .tabs {
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+            margin-bottom: 2vh;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 0px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            font-size: 2vw;
+            overflow-wrap: break-word;
+            display: grid;
+            place-items: center;
+        }
+
+        .tab.active {
+            background-color: lime;
+        }
+
+	.tab h5 {
+	  	color: white;
+	  	font-size: 3vw;
+	  	padding: 0;
+	  	margin: 0;
+	  	display: flex;
+            	justify-content: center;
+            	text-align: center;
+	  }
+	  
+	  .tab.active h5 {
+	  	color: black;
+	  }
+
+        .content {
+            background-color: lime;
+            padding: 0px;
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .btnContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+        }
+
+        .button {
+            width: 75vw;
+            height: 10vh;
+            border: 1px solid blue;
+            border-radius: 25px;
+            
+            font-size: 3vw;
+            background-color: white;
+        }
+        
+        #addContent {
+        
+        	width: 50vw;
+        	height: 5vh;
+        	font-size: 2vw;
+        }
+
+        @media screen and (max-width: 600px) {
+            .tab {
+                padding: 10px; /* Adjust padding for smaller screens */
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+
+            .tab.active {
+                font-size: 16px; /* Adjust active tab font size for smaller screens */
+            }
+        }
+	  .post {
+	    max-width: 75vw;
+	    margin: 2rem auto;
+	    padding: 2rem;
+	    background-color: white;
+	    border: solid;
+	    border-radius: 25px;
+	    text-align: center;
+	  }
+	  #welcome {
+		  background-color: white;
+		  width: 100%;
+		  color: black;
+		  text-align: center;
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+	}
+	.hrBlk {
+	  width: 100%;
+	  height: 1px;
+	  background-color: black;
+	  padding: 0;
+	  margin: 0;
+	}
+    </style>
+
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab active" onclick="showContent(0)"><h5 id="nodeTab" class="editable">Node Replicator</h5></div>
+        <div class="tab" onclick="showContent(1)"><h5>TRASH MAGIC<br>QUESTS</h5></div>
+        <div class="tab" onclick="showContent(2)"><h5>WINNING<br>THE GAME</h5></div>
+        <div class="tab" onclick="showContent(3)"><h5>YOUR FIRST<br>QUEST</h5></div>
+        <div class="tab" onclick="showContent(4)"><h5>JOIN THE<br>COMMUNITY</h5></div>
+    </div>
+    
+    <div class="hrBlk"></div>
+    <div id="welcome">
+  <b>EJECT KAPITAL :: BECOME TRASH</b>
+</div>
+    <div class="hrBlk"></div>
+
+    <div class="content active" id="content-0">
+    	<div id="contentContainer">
+            <div class="post">
+	      <h2 class="editable">dnaserver.free.nf</h2>
+	      <p><a class="editable">TRASH MAGIC HYPERLINK EXAMPLE</a></p>
+	      <p class="editable">This space is for you to write a detailed description of your post. Click here to edit this. The multline textarea can be expanded by dragging the three diagonal lines at the lower right-hand corner of the editable input element. Press enter to confirm changes. Refresh the page to erase changes back to default. Download/Replicate to save changes hard-coded as the new default of a new file.</p>
+	    </div>
+	</div>
+	    
+	<div class="btnContainer">
+	    <button class="button" id="addContent" onclick="addContent()">Add Content</button>
+	</div>
+
+        <div class="btnContainer">
+            <input id="pageName" class="editable edit-mode" value="type_node_name_here">
+        </div>
+
+        <div class="btnContainer">
+            <button class="button" id="downloadButton" onclick="generateDownloadableCode()">Click here to Download/Replicate the DNA.</button>
+        </div>
+    </div>
+    <div class="content" id="content-1">
+        <div class="post">
+		<h1>
+		TRASH MAGIC QUESTS
+		</h1>
+	</div>
+	
+	<div class="post">
+	What is <b>TRASH MAGIC</b>? Imagine you are going on a quest with your friends. You are magicians, and together you use free and sustainable stuff around you to create a new world where community matters more than profit. You are on quests to help connect the whole community in a network of people and resources. <b>TRASH MAGIC</b> is a game of quests.
+	</div>
+	
+	<div class="post">
+	One of your quests might be to build a neighborhood planter box or little free library. Another quest could be to start a weekly litter clean-up group. Some quests might simply be telling stories about quests, or hanging out in places you wouldn't normally go and talking to people you've never met, spreading hyperseeds and replicating the desire to make Trash Magic.
+	</div>
+	
+	<div class="post">
+	So... what <i>is</i> <b>TRASH MAGIC</b>???<br><br>
+	<b>Trash Magic generally meets 3 criteria:</b><br><br>
+	• It is made from freely available materials<br>
+	• It has DNA (the instructions for making more of the thing is contained in the thing itself)<br>
+	• It helps us build a self-sustaining community<br>
+	</div>
+	
+	<div class="post">
+		<h4>FREELY AVAILABLE MATERIALS</h4>
+		We use free, cheap, or salvageable materials so that anyone can replicate our systems from anything. There is so much waste in our society that we rarely even need to buy new things. We throw away more than we can fathom. By polluting the earth, western economics has given us the materials needed to destroy capitalism forever. For the first time in history, our planet is covered with perfectly good stuff that nobody wants just because it's not 'brand new'. Capitalism is gaudy and ineffective because it requires millions of dollars for meaningless details. Trash Magic is better adapted to humanity because it can be made anywhere, from anything. We have everything we need around us. Even plastic bottles can be sterilized, heated and reshaped. As they say, "One person's trash..."
+	</div>
+	
+	<div class="post">
+		<h4>DNA INSTRUCTIONS</h4>
+		In order to copy the thing, you need instructions. The instructions, naturally, should be contained, connected, engraved, or otherwise attached to the <i>real-world</i> thing itself. All of Trash Magic is played in the real-world, so any time someone uses any Trash Magic, it should be easy for them to make more because the replication instructions are literally right in their hands. When the instructions can be executed for free, we have the ability to exponentially build new infrastructure that is completely free for everyone to build and use. The more we make free stuff out of free stuff that contains the instructions to copy itself using free stuff, the more that all humans on earth will have <b>FREE STUFF</b>.
+	</div>
+	
+	<div class="post">
+		<h4>SELF-SUSTAINING COMMUNITIES</h4>
+		Obviously, the world and community we build will just get us right back into the same mess if we don't sort out the issues that got us here in the first place. Our societies should be community-oriented. We aim to be able to provide for one another all the necessities of life, and many of its luxuries, absolutely free. We have the means and the motive and the opportunity. Will we do what must be done? Our new world should be able to provide for anyone in the community without having to call for help from capitalists in the next town over. No individual can do everything themselves, but as a community we ought to be able to survive comfortably, indefinitely, without depending on people or products going out or coming in. There should be absolutely no "waste".
+	</div> 
+	
+		
+	
+	<div class="post">
+	<p>
+	During each quest, you will find new adventure, discover new worlds, and meet new people. You will learn to make real world connections and build real world communities which are self-sustaining and self-replicating.
+	</p>
+	</div>
+
+	
+	<div class="post">
+	<h4>With Trash Magic, you can...</h4>
+	<br>
+	• contribute your own skills<br>
+	• share your favorite content and media<br>
+	• map resources in your area<br>
+	• list opportunities for people to go on quests
+	</div>
+	
+	<div class="post">
+	On our quests, we avoid power structures. No one is "in charge". We operate unanimously or not at all. We avoid words or phrases that are hard to understand. We don't believe in terms and conditions agreements and we don't believe in legal fine print. We don't believe in debt.
+	</div>
+
+
+	<div class="post">
+	You will feel increasingly uncomfortable with capitalism and bureaucracy when you start to see the Trash Magic Vision. You will feel more and more motivated to go on more quests. This is the "MAGIC" in "Trash Magic". "Magic" in this game means that you have the desire to make something useful. And when you can make it replicate freely out of trash, that's "Trash Magic".
+	</div>
+	
+	<div class="post">
+	When you go on Trash Magic Quests, you will be less stressed about money and feel less lonely. Even better, every time anyone on the trash magic network completes a quest, they push forward the goals of the whole system, which makes it easier for everyone else in the system to do bigger and greater quests.
+	</div>
+	
+		
+	<div class="post">
+	We are scaling this system at a negative marginal cost.
+	</div>
+
+	<div class="post">
+	<p>
+	You can collect media for free off of the trash magic network. Download all the media you want and make backups incase of crashes. You can store all of your digital and physical trash magic for personal use offline and on-the-go.
+	</p>
+	</div>
+
+	<div class="post">
+	This HTML file is the DNA of all trash magic on this node. There are other nodes with their own DNA. You can replicate this file and adapt it to your liking for your own trash magic. It is a singular file of instructions from which the entire trash magic game can be created and replicated.
+	<div class="btnContainer">
+            <button class="button" id="downloadButton" onclick="generateDownloadableCode()">Click here to Download/Replicate the DNA.</button>
+        </div>
+	</div>
+<div class="post">
+<h4><a href="#">BACK TO TOP</a></h4>
+</div>
+    </div>
+    
+    
+    
+    
+    <div class="content" id="content-2">
+<div class="post">
+<h1>
+WINNING THE GAME
+</h1>
+</div>
+
+<div class="post">
+<h2>You win the game when your community has free and open access to a human network that meets the following physical and social needs:</h2>
+<h4>
+</h4><h3>PHYSICAL HUMAN NEEDS</h3>
+• Food<br>
+• Clean water<br>
+• Disposal of human waste <br>
+• Tools <br>
+• Temperature control inside sheltered areas: heat and cooling of air in indoor environment of some kind, construction of those shelters such that this needs minimal... <br>
+• Energy (use natural heat and coolness from the environment) <br>
+• Communication / networking / controls / automation / audio / video / simulations: these are the real reasons we need “computers” <br>
+• Medicine and drugs <br>
+<hr>
+<h3>SOCIAL HUMAN NEEDS</h3>
+• Generalized Social Supports <br>
+• Accessibility to participate in and opportunities to contribute to society <br>
+• Therapy and Counseling <br>
+• Social and communal places, both physical and online (3rd places, etc.) <br>
+• Access to Trash Magic Networks, which of course should include all of this <br>
+
+</div>
+
+
+	<div class="post">
+	The Trash Magic Network connects people who have the real-world resources and people who enjoy the real-world work with people who need the real-world stuff. The game of Trash Magic manages that flow, but does not "own" any of it. The game of Trash Magic is played in the real world, on the digital nodes.
+	</div>
+
+<div class="post">
+<h4><a href="#">BACK TO TOP</a></h4>
+</div>
+
+    </div>
+    
+    <div class="content" id="content-3">
+<div class="post">
+<h1>
+YOUR FIRST QUEST
+</h1>
+</div>
+<div class="post">
+<p>
+Your first trash magic quest will be to build a personal Trash Magic Toolbox which contains all the fundamental shapes of Action Geometry. Then, you'll upload it to the Trash Magic Network.
+</p>
+
+<p>
+This includes 90 degree, 45 degree, 72 and 36 and 108 degree, 60 and 30 degrees, and the Golden Ratio, square root of two, and square root of
+three. Along with a standard Geometron ruler 6 inches in length, this set of shapes forms the basis of our whole construction method.
+</p>
+</div>
+
+<div class="post">
+<h4><a href="#">BACK TO TOP</a></h4>
+</div>
+
+    </div>
+    
+    
+    
+    <div class="content" id="content-4"> 
+<div class="post">
+<h1>JOIN THE COMMUNITY!</h1>
+</div>
+
+<div class="post">
+<p>Upload the DNA to Instagram with the #trashmagic hashtag</p>
+<p>Upload the DNA to TikTok with the #trashmagic hashtag</p>
+<p>Upload the DNA to <a target="_blank" href="http://trashmagic.community">trashmagic.community</a></p>
+<p>Broadcast the DNA from a local personal server over wifi</p>
+<p>Replicate this node, update the content and post it on your personal webpage</p>
+</div>
+
+<div class="post">
+HERE ARE HYPERLINKS TO OTHER NODES OF REPLICATING COMMUNITY MEDIA:
+<br>
+<a href="https://trashmagic.community/home" target="_blank">Trash Magic Community Mastodon</a>
+<br>
+<a href="https://trashrobot.org" target="_blank">trashrobot.org</a>
+<br>
+<a href="https://releaf.site" target="_blank">releaf.site</a>
+<br>
+
+<a href="https://anarchosolarpunk.substack.com/p/offgridinternet" target="_blank">off-grid internet via Hydroponic Trash</a>
+<br>
+<a href="https://drive.google.com/file/d/1up1sVOsX3Hbz7eME0s7-Ie8iI6Nm-nS4/view?usp=sharing" target="_blank">Hydroponic Trash's V2 book collection on google drive (~6GB) </a>
+<br>
+<a href="https://hydroponictrash.solar/" target="_blank">Hydroponic Trash main</a>
+<br>
+<!--
+<a href="https://www.youtube.com/channel/UC4AkVj-qnJxNtKuz3rkq16A" target="_blank">Robert Murray-Smith Youtube</a>
+<br>
+-->
+<a href="https://dnaserver.000webhostapp.com" target="_blank">DNA Server Node Replicator</a>
+</div>
+
+<div class="post">
+<h4>Consider using these hashtags also:</h4>
+#solarpunk<br>
+#sacredgeometry<br>
+#dumpsterdiving
+</div>
+
+	
+	<div class="post">
+	<p>
+	If you have a node on the digital trash magic network, you can upload your media and replicables to your webpage for other people to view, download, and replicate. During quests, you might meet people who tell you about their nodes. If you have a node and meet someone with a node that is relevant to one of yours, you can hyperlink from your webpage to theirs, thus increasing the network density and total number of connections in the trash magic network. Going on quests is a great way to meet and hang out with people in real life. Ultimately, the entire game of trash magic is played in the real world using the virtual reality quest interface map app (this file), which is the DNA of this particular digital trash magic network. The DNA is a rough replica of the system that it inherited from. Your replica may be as similar or different as you prefer. You are encouraged to be as creative as possible during all this. Express Yourself!
+	</p>
+	</div>
+
+<div class="post">
+<h4><a href="#">BACK TO TOP</a></h4>
+</div>
+
+    </div>
+
+    <script>
+    
+    	function addContent() {
+    	
+    		const container = document.getElementById("contentContainer")
+    		
+    		container.innerHTML += `<div class="post">
+	      <h2 class="editable">TRASH MAGIC TITLE. Click this space to edit and then press enter:</h2>
+	      <p><a class="editable">TRASH MAGIC HYPERLINK EXAMPLE</a></p>
+	      <p class="editable">This space is for you to write a detailed description of your post. Click here to edit this. The multline textarea can be expanded by dragging the three diagonal lines at the lower right-hand corner of the editable input element. Press enter to confirm changes. Refresh the page to erase changes back to default. Download/Replicate to save changes hard-coded as the new default of a new file.</p>
+	    </div>`
+	    
+	    var editableElements = document.querySelectorAll(".editable");
+	editableElements.forEach(element => {
+	  element.addEventListener("click", enableEditMode);
+	});
+    	
+    	}
+    
+    	function generateDownloadableCode() {
+
+	  // const modifiedContent = generateModifiedHTML();
+	  
+	  var pageName = document.getElementById("pageName");
+	  if (pageName.value == "type_node_name_here") {
+	  	pageName.value = "trash_magic_replicator"
+	  }
+	  
+	  var modifiedContent = document.querySelector("#hypertext").cloneNode(true)
+
+
+	// Access the element with id "pageName" within the DOM element
+	var pageNameElement = modifiedContent.querySelector('#pageName');
+
+	// Now, you can work with pageNameElement as needed
+	pageNameElement.innerText == pageName.value
+	
+	modifiedContent = modifiedContent.outerHTML
+
+
+	  // Create a Blob with the modified content
+	  const blob = new Blob([modifiedContent], { type: "text/html" });
+
+	  // Create a URL for the Blob
+	  const url = URL.createObjectURL(blob);
+
+	  // Create a link element for downloading
+	  const downloadLink = document.createElement("a");
+	  downloadLink.href = url;
+	  downloadLink.download = pageName.value+".html";
+	  downloadLink.click();
+
+	  // Release the URL object
+	  URL.revokeObjectURL(url);
+	}
+
+	function generateModifiedHTML() {
+	  const clonedContainer = document.querySelector("#hypertext").cloneNode(true);
+	  // const editableElements = clonedContainer.querySelectorAll(".editable");
+
+	  return clonedContainer.outerHTML;
+	}
+
+    
+        function showContent(index) {
+            // Hide all content sections
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show the selected content section
+            const selectedContent = document.getElementById(`content-${index}`);
+            selectedContent.classList.add('active');
+
+            // Deactivate all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Activate the clicked tab
+            tabs[index].classList.add('active');
+            
+            if (index == "0") {
+		var editableElements = document.querySelectorAll(".editable");
+		editableElements.forEach(element => {
+	  	  element.addEventListener("click", enableEditMode);
+		});
+		
+		// downloadButton.addEventListener("click", generateDownloadableCode);
+	      }
+            
+        }
+        
+	var editableElements = document.querySelectorAll(".editable");
+	editableElements.forEach(element => {
+	  element.addEventListener("click", enableEditMode);
+	});
+
+	function enableEditMode(event) {
+	  const element = event.target;
+
+	  if (!element.classList.contains("edit-mode")) {
+	    element.classList.add("edit-mode");
+	    const text = element.innerText;
+
+	    
+	    if (element.tagName === "P") {
+	      const textarea = document.createElement("textarea");
+	      textarea.value = text;
+	      element.innerText = "";
+	      element.appendChild(textarea);
+	      textarea.focus();
+
+	      textarea.addEventListener("blur", () => {
+		disableEditMode(element, textarea.value);
+	      });
+
+	      textarea.addEventListener("keydown", (e) => {
+		if (e.key === "Enter" && !e.shiftKey) {
+		  e.preventDefault(); // Prevent newline in textarea
+		  disableEditMode(element, textarea.value);
+		}
+	      });
+	    } else {
+	      const input = document.createElement("input");
+	      input.value = text;
+	      element.innerText = "";
+	      element.appendChild(input);
+	      input.focus();
+	      
+
+	      // save node replicator changes
+	      input.addEventListener('keydown', function(event) {
+		let page = document.getElementById("contentContainer");
+		nodeReplicator = page.innerHTML;
+	      });
+
+
+	      input.addEventListener("blur", () => {
+		disableEditMode(element, input.value);
+	      });
+
+	      input.addEventListener("keydown", (e) => {
+		if (e.key === "Enter") {
+		  disableEditMode(element, input.value);
+		  var nodeTitle = document.getElementById("nodeTitle");
+		  if (element.id == "nodeTab") {
+		    nodeTitle.innerText = element.innerText
+		  }
+		  
+		  
+		}
+	      });
+	    }
+	  }
+	}
+
+	function disableEditMode(element, newValue) {
+	  element.classList.remove("edit-mode");
+	  element.innerText = newValue;
+	  
+	  if (element.id == "nodeTab" && element.innerText == "") {
+	  	element.innerText = "Node Replicator"
+	  }
+	  
+	  // after disabling edit mode, removing empty content containers
+	  var content = document.getElementById("contentContainer")
+	  var posts = content.children
+	  console.log('disbaling edit mode')
+	  for (let i = 0; i < posts.length; i++) {
+	  	console.log('summing '+posts.length+' posts')
+	  	let empty = true
+	  	console.log(posts[i])
+	  	let els = posts[i].children
+	  	for (let j = 0; j < els.length; j++) {
+	  		console.log(els[j])
+	  		if (els[j].innerText != "") {
+	  			console.log('not empty')
+	  			empty = false
+	  		}
+	  	}
+	  	if (empty) {
+	  			content.removeChild(posts[i])
+	  		}
+	  }
+	}        
+    </script>
+
+
+</body></html>
