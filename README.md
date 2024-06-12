@@ -1,1 +1,1 @@
-<a href="dna-server.github.io">dna-server.github.io</a>
+[dna-server.github.io](https://www.dna-server.gitub.io)
