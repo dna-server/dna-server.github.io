@@ -1,1 +1,1 @@
-[dna-server.github.io](https://www.dna-server.gitub.io)
+[dna-server.github.io](https://dna-server.gitub.io)
