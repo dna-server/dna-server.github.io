@@ -54,33 +54,52 @@ test no title element
 </div>
 
 <hr>
+
+<div id="blueprint-content"> <!-- this div holds the modular blueprint content and can be accessed with its id, "blueprint-content" -->
 <!-- content goes below -- this is not a complete file without content below this line -- complete me with </body></html> below this line or append a content and/or footer file -->
+
+
+<!-- The <title> will become the text on the browser tab for the page -->
+<title>Blueprint Library</title>
 <!-- -->
 
 <h1 id="pageName">Trash Magic Blueprint Library</h1>
 
 <h4>FOOD</h4>
 <a href="cookies.html">Ultimate Chocolate Chip Cookies</a>
+<br>
+<a href="hugelkultur.html">Hugel-Kultur</a>
 
 <h4>CLEAN WATER</h4>
+<a href="water_from_plants.html">Water From Plants</a>
 <h4>DISPOSAL OF WASTE</h4>
 <h4>TOOLS</h4>
 <a href="actiongeometry.html">Action Geometry</a>
+<br>
 <a href="hdpe.html">Plastic Fabrication</a>
+<br>
+<a href="Microscopes.html">Microscopes</a>
 
 <h4>TEMPERATURE CONTROL</h4>
 <h4>ENERGY</h4>
+<a href="stirling_engine.html">Stirling Engine</a>
 <h4>COMMUNICATION & COMPUTERS</h4>
 <h4>MEDICINE AND DRUGS</h4>
 
 <h4>MISC</h4>
 <a href="experimenting with dyes.html">Experimenting With Dyes</a>
+<br>
 <a href="principles.html">Principles</a>
+
+<h4>PRINTING PRESS</h4>
+<a href="paper.html">Making Paper</a>
+<br>
+<a href="ink.html">Making Ink</a>
 
 <!-- -->
 
 <!-- content goes above -- this is not a complete file without content above this line -- complete me with <html><body> above this line or append a content and/or footer file -->
-
+</div> <!-- this div is necessary, fyi, it ends the "blueprint-content" div -->
 <! -- -->
 <hr>
 <!--
@@ -193,6 +212,12 @@ test no title element
 				</p>
 			</div>
 		</div>
+		<!-- -->
+		<div class="box-container">
+			<div class="box">
+				Trash means free materials and Magic means the desire to replicate using instructions. RNA Polymerase does something like Trash Magic. The Magician and their will to replicate a set are always two of the elements of the set itself. What we are doing inspires <i>desire</i> in us, the desire to participate in the great wonder of Life and Self-Replication. We also desire to live well and be happy and see our community members doing the same. Trash Magic is meant to be inherent in everything that we create. Trash Magic is both Art and Technology that moves us with a kind of reverence to Replicate and Recycle. Thus, the name "Trash Magic" refers to the excitement and wonder of playing the game and participating in Life Itself.
+			</div>
+		</div>
 		<! -- -->
 		<div class="box-container">
 			<div class="box">
@@ -206,12 +231,12 @@ test no title element
 				<br>
 				REPEAT
 				<br><br>
-				This page is written using HTML, CSS, and JavaScript, which you can learn <a href="https://www.w3schools.com/html/default.asp" target="_blank">HERE</a> and <a href="https://github.com/dna-server/dna-server.github.io/blob/main/Beginners_Guide_to_HTML.pdf" target="_blank">HERE</a>.
+				This page is written using HTML, CSS, and JavaScript, which you can learn <a href="https://www.w3schools.com/html/default.asp" target="_blank">HERE</a> and <a href="https://dna-server.github.io/Beginners_Guide_to_HTML.pdf" target="_blank">HERE</a>.
 				<br><br>				 
 			</div>
 		</div>	
-		<hr>
-		<! -- -->
+
+		<!-- -->
 		<div class="container">
 			<div class="box-container" style="background-color: rgba(55, 255, 0, 0.8);">
 				<div class="box">
@@ -224,7 +249,7 @@ test no title element
         				-->
         				<div class="btnContainer">
         					<div class="button">
-	        					You can download-replicate any website with a right-click, then select 'SAVE PAGE AS'. Try it on this page!
+        						Right-click anywhere and select 'SAVE PAGE AS' to download-replicate this page. This works on any website!
 	        				</div>
 	        			</div>
 					<div class="btnContainer">
@@ -234,7 +259,7 @@ test no title element
 					</div>
 					<div class="btnContainer">
 						<a class="button" style="text-decoration: none; color: black;" href="https://github.com/dna-server/dna-server.github.io/archive/refs/heads/main.zip" target="_blank">
-							Click here to download-replicate the entire system of blueprints, recipes, pdfs, etc. (~500MB)
+							Click here to download-replicate the entire system of blueprints, recipes, pdfs, etc. (<50MB)
 						</a>
 					</div>
 				</div>
@@ -251,21 +276,11 @@ function generateDownloadableCode() {
 	
 	// The title of the page will be the name of the new file to download
 	var pageName = document.getElementById("pageName");
-	
+	console.log("download-replicated "+pageName.innerText+" page");
 	// the <html> element contains all our page's content, so copy it
 	var modifiedContent = document.querySelector("#hypertext").cloneNode(true)
-
-	/*
-	// Get the element which holds the page name
-	var pageNameElement = modifiedContent.querySelector('#pageName');
 	
-	// Now, you can work with pageNameElement as needed
-	pageNameElement.innerText == pageName.textContent
-	*/
-	
-	modifiedContent = modifiedContent.outerHTML
-	
-	/****************************************/
+	modifiedContent = "<!DOCTYPE html>\n"+modifiedContent.outerHTML
 	
 	// Create a Blob with the modified content
 	const blob = new Blob([modifiedContent], { type: "text/html" });
@@ -282,11 +297,50 @@ function generateDownloadableCode() {
 
 	// Release the URL object
 	URL.revokeObjectURL(url);
+	
+	// Call the function to start the process
+	downloadAllImages();
 	}
 	
 	var minified = false;
 	var dnaContainer = document.getElementById('dna-container');
         const DNA = dnaContainer.innerHTML;
+        
+        // Function to download an image from a URL
+	function downloadImage(url) {
+	  fetch(url)
+	    .then(response => response.blob()) // Convert the response to a blob
+	    .then(blob => {
+	      // Create a link element and set the href attribute to the image URL
+	      const link = document.createElement('a');
+	      link.href = URL.createObjectURL(blob);
+	      link.download = url.split('/').pop(); // Use the image filename as the download filename
+	      document.body.appendChild(link);
+	      link.click();
+	      // Clean up
+	      document.body.removeChild(link);
+	      URL.revokeObjectURL(link.href);
+	    })
+	    .catch(error => console.error('Error downloading image:', error));
+	}
+
+	// Function to get all image URLs and download them
+	function downloadAllImages() {
+	  // Select all <img> elements in the document
+	  const images = document.querySelectorAll('img');
+	  
+	  images.forEach(img => {
+	    const src = img.src;
+	    if (src) {
+	      downloadImage(src); // Download each image
+	    }
+	  });
+	}
+
+	
+        
+        /***************
+        ***************/
 	
 	function extractAndMinifyText() {
             // Select the specific parent element by ID
@@ -339,6 +393,117 @@ function generateDownloadableCode() {
             parentElement.innerHTML = minifiedText
             // alert(minifiedText); // Optional: Show in an alert box
         }
+        
+        
+        // Define a base custom element class
+        class CustomElementBase extends HTMLElement {
+            constructor() {
+                super();
+                // Create a shadow root
+                const shadow = this.attachShadow({ mode: 'open' });
+
+                // Create a container for the content
+                const container = document.createElement('div');
+                container.className = 'custom-element';
+
+                // Apply default styles
+                const style = document.createElement('style');
+                style.textContent = `
+                    .custom-element {
+                        background-color: rgb(95, 155, 255);
+			width: auto;
+			color: black;
+			border-radius: 25px;
+			border: 5px solid rgb(0, 50, 150);
+			padding: 10px;
+			margin: 20px;
+			text-align: center;
+                    }
+                `;
+
+                // Add style and container to shadow root
+                shadow.appendChild(style);
+                shadow.appendChild(container);
+
+                // Set text content based on element type
+                this.setTextContent(container);
+            }
+
+            // Method to be overridden in derived classes to set specific text
+            setTextContent(container) {
+                // Default implementation (to be overridden)
+                container.textContent = 'Default text inside custom element.';
+            }
+        }
+
+        // Define specific custom elements extending the base element
+        class WarnSunlight extends CustomElementBase {
+            constructor(){
+                super();
+            	const container = this.shadowRoot.querySelector('.custom-element');
+           	container.style.borderColor = this.getAttribute('border-color') || 'rgb(242, 77, 56)';
+           	container.style.backgroundColor = this.getAttribute('background-color') || 'white';
+            }
+            setTextContent(container) {
+                container.textContent = 'Focused Sunlight can be very Dangerous. Do Not try this unless you know exactly what you are doing.';
+            }    
+        }
+
+        class WarnElectricity extends CustomElementBase {
+            constructor(){
+                super();
+            	const container = this.shadowRoot.querySelector('.custom-element');
+           	container.style.borderColor = this.getAttribute('border-color') || 'rgb(255, 234, 0)';
+           	container.style.backgroundColor = this.getAttribute('background-color') || 'rgb(255, 245, 135)';
+            }
+            setTextContent(container) {
+                container.textContent = 'Electricity can be very Dangerous. Do Not try this unless you know exactly what you are doing.';
+            }
+        }
+        
+        class WarnFire extends CustomElementBase {
+            constructor(){
+                super();
+            	const container = this.shadowRoot.querySelector('.custom-element');
+           	container.style.borderColor = this.getAttribute('border-color') || 'rgb(153, 36, 0)';
+           	container.style.backgroundColor = this.getAttribute('background-color') || 'rgb(247, 208, 203)';
+            }
+            setTextContent(container) {
+                container.textContent = 'Fire can be very Dangerous. Do Not try this unless you know exactly what you are doing.';
+            }
+        }
+        
+        class WarnRadiation extends CustomElementBase {
+            constructor(){
+                super();
+            	const container = this.shadowRoot.querySelector('.custom-element');
+           	container.style.borderColor = this.getAttribute('border-color') || 'rgb(64, 18, 28)';
+           	container.style.backgroundColor = this.getAttribute('background-color') || 'rgb(167, 255, 120)';
+            }
+            setTextContent(container) {
+                container.textContent = 'Radiation can be very Dangerous. Do Not try this unless you know exactly what you are doing.';
+            }
+        }
+        
+        class WarnChemical extends CustomElementBase {
+            constructor(){
+                super();
+            	const container = this.shadowRoot.querySelector('.custom-element');
+           	container.style.borderColor = this.getAttribute('border-color') || 'rgb(153, 176, 100)';
+           	container.style.backgroundColor = this.getAttribute('background-color') || 'rgb(135, 230, 215)';
+            }
+            setTextContent(container) {
+                container.textContent = 'Chemicals can be very Dangerous. Do Not try this unless you know exactly what you are doing.';
+            }
+        }
+
+        // Register custom elements
+        customElements.define('sunlight-warning', WarnSunlight);
+        customElements.define('electricity-warning', WarnElectricity);
+        customElements.define('chemical-warning', WarnChemical);
+        customElements.define('radiation-warning', WarnRadiation);
+        customElements.define('fire-warning', WarnFire);
+        
 
 /*
 // LEGACY COMMENTS FOR QR CODE INTEGRATION ETC.
