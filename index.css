@@ -1,0 +1,42 @@
+.red {background-color: rgba(255, 135, 75, 0.7);}
+.blue {background-color: rgba(75, 135, 255, 0.3);}
+.green {background-color: rgba(105, 255, 125, 0.9);}
+
+.border {
+		width: 90%;
+		min-width: 50vw;
+		border-radius: 25px;
+		border: 2px solid rgba(53, 61, 75, 0.54);
+		padding: 15px;
+		margin: auto;
+		margin-top: 35px;
+		box-shadow: 0px 10px 3px 3px rgba(21, 28, 25, 0.84);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+}
+
+p, h1 {
+		width: 100%;
+		margin: auto;
+		height: auto;
+		border-radius: 25px;
+		border: 2px solid silver;
+		background-color: white;
+		text-align: center;
+		color: black;
+		font-size: 18px;
+		font-family: sans-serif;
+		/* box-shadow: horizontal_offset vertical_offset blur spread color; (all values in px except color)*/
+		box-shadow: 0 4px 4px 6px rgba(121, 128, 125, 0.99);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		padding: 20px;
+		box-sizing: border-box;
+}
+
+h1 {font-size:26px;}
+
+.cardboard {
+	background-color:#9f8767; 
+	padding: 25px;
+}
