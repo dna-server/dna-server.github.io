@@ -15,7 +15,7 @@
 		-webkit-backdrop-filter: blur(10px);
 }
 
-p, h1 {
+p, h1, h3 {
 		width: 100%;
 		margin: auto;
 		height: auto;
@@ -34,9 +34,25 @@ p, h1 {
 		box-sizing: border-box;
 }
 
-h1 {font-size:26px;}
+h1 {
+	font-size:26px;
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+h4 {display:inline;}
 
 .cardboard {
 	background-color:#9f8767; 
 	padding: 25px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4px;
+	margin-top: 50px;
+	text-align: left;
 }
